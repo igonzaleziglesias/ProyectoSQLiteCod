@@ -27,7 +27,13 @@ public class Insertar {
         }
         return conn;
     }
-
+    /**
+     * Metodo para insertar datos en la tabla que se corresponden a los alumnos de la clase.
+     * @param id clave primaria
+     * @param name nombre del alumno
+     * @param secondname apellido del alumno
+     * @return un int positivo si hizo la insercion, un 0 si la clave primaria ya existe y no realizo la insercion y un -1 si hay algun error y no hizo la insercion
+     */
     public int insert(int id, String name, String secondname, String nombreTabla) {
         String sql = "INSERT INTO " + nombreTabla + " (id,name,secondname) VALUES(?,?,?)";
 

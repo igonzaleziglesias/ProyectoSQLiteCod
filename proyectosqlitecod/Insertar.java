@@ -14,7 +14,13 @@ import java.sql.SQLException;
  *
  * @author Iago
  */
-public class Insertar {
+public class Insertar {   
+    
+    /**
+     * Metodo para conectarse a la base de datos
+     *
+     * @return Un objeto Connection.
+     */
 
     private static Connection connect() {
         // SQLite connection string

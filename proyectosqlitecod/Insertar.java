@@ -17,8 +17,7 @@ public class Insertar {
      * @return Un objeto Connection.
      */
     private static Connection connect() {
-        // SQLite connection string
-        String url = "jdbc:sqlite:tests.db";
+        String url = "jdbc:sqlite:tests.db";//conectar a la base de datos
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -39,14 +38,14 @@ public class Insertar {
      * hizo la insercion, si devuelve 0 es que la clave primaria esta repetida
      */
     public int insert(int id, String name, String secondname, String nombreTabla) {
-        String sql = "INSERT INTO " + nombreTabla + " (id,name,secondname) VALUES(?,?,?)";
+        String sql = "INSERT INTO " + nombreTabla + " (id,name,secondname) VALUES(?,?,?)";//sentencia para insertar en la tabla
 
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             pstmt.setString(2, name);
             pstmt.setString(3, secondname);
-            return pstmt.executeUpdate();
+            return pstmt.executeUpdate();//hacer insercion
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

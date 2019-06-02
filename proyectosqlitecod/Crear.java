@@ -16,18 +16,18 @@ public class Crear {
      */
     public Crear() {
 
-        String url = "jdbc:sqlite:tests.db";
+        String url = "jdbc:sqlite:tests.db";//nombre de la base de datos
 
         String sql = "CREATE TABLE IF NOT EXISTS tabladefecto ("
                 + "	id integer PRIMARY KEY,"
                 + "	name text NOT NULL,"
                 + "	secondname text  NOT NULL"
-                + ");";
+                + ");";//setencia sql para crear la tabla
 
         try (Connection conn = DriverManager.getConnection(url);
-                Statement stmt = conn.createStatement()) {
+                Statement stmt = conn.createStatement()) {//conectar
 
-            stmt.execute(sql);
+            stmt.execute(sql);//ejecutar sentencia
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -41,18 +41,18 @@ public class Crear {
      */
     public Crear(String nombreTabla) {
 
-        String url = "jdbc:sqlite:tests.db";
+        String url = "jdbc:sqlite:tests.db";//nombre de la base de datos
 
         String sql = "CREATE TABLE IF NOT EXISTS " + nombreTabla + " ("
                 + "	id integer PRIMARY KEY,"
                 + "	name text NOT NULL,"
                 + "	secondname text  NOT NULL"
-                + ");";
+                + ");";//setencia sql para crear la tabla
 
         try (Connection conn = DriverManager.getConnection(url);
-                Statement stmt = conn.createStatement()) {
+                Statement stmt = conn.createStatement()) {//conectar
 
-            stmt.execute(sql);
+            stmt.execute(sql);//ejecutar sentencia
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

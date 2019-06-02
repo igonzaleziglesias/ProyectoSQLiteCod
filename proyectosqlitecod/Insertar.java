@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectosqlitecod;
 
 import java.sql.Connection;
@@ -14,14 +9,13 @@ import java.sql.SQLException;
  *
  * @author Iago
  */
-public class Insertar {   
-    
+public class Insertar {
+
     /**
      * Metodo para conectarse a la base de datos
      *
      * @return Un objeto Connection.
      */
-
     private static Connection connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:tests.db";
@@ -33,12 +27,16 @@ public class Insertar {
         }
         return conn;
     }
+
     /**
-     * Metodo para insertar datos en la tabla que se corresponden a los alumnos de la clase.
+     * Metodo para insertar datos en la tabla que se corresponden a los alumnos
+     * de la clase.
+     *
      * @param id clave primaria
      * @param name nombre del alumno
      * @param secondname apellido del alumno
-     * @return un int positivo si hizo la insercion, un 0 si la clave primaria ya existe y no realizo la insercion y un -1 si hay algun error y no hizo la insercion
+     * @return el numero de filas que inserto y un -1 si hay algun error y no
+     * hizo la insercion, si devuelve 0 es que la clave primaria esta repetida
      */
     public int insert(int id, String name, String secondname, String nombreTabla) {
         String sql = "INSERT INTO " + nombreTabla + " (id,name,secondname) VALUES(?,?,?)";
@@ -48,8 +46,8 @@ public class Insertar {
             pstmt.setInt(1, id);
             pstmt.setString(2, name);
             pstmt.setString(3, secondname);
-            pstmt.executeUpdate();
-            return 1;
+            return pstmt.executeUpdate();
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return -1;

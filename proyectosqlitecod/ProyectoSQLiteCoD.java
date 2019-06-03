@@ -13,9 +13,13 @@ public class ProyectoSQLiteCoD {
         System.out.println("Registros insertados: "+insert.insert(6467, "Samuel", "Gomez", "España", "CLASE", "PROCEDENCIA"));
         Borrar delete = new Borrar();
         System.out.println("Registros borrados "+delete.delete(6468, "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros borrados "+delete.delete(6469, "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros borrados "+delete.deleteNombre("Samuel", "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros borrados "+delete.delete(6467, "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados "+delete.delete(6469, "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados "+delete.deleteNombre("Samuel", "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados "+delete.deleteApellido("Gomez", "CLASE", "PROCEDENCIA"));
+        System.out.println("Registros borrados "+delete.deletePais("España", "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados "+delete.delete(6467, "CLASE", "PROCEDENCIA"));
+        Consultar quest = new Consultar();
+//        System.out.println(quest.select("id,name,secondname", "pais", "CLASE", "PROCEDENCIA"));
     }
 
 }

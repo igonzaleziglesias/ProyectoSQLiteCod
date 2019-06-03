@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class Crear {
 
     /**
-     * constructor para crear una tablar por defecto.
+     * constructor para crear tablas de la base de datos por defecto.
      */
     public Crear() {
 
@@ -32,14 +32,28 @@ public class Crear {
             System.out.println(e.getMessage());
         }
 
+        String sql2 = "CREATE TABLE IF NOT EXISTS tabladefecto2 ("
+                + "	id integer PRIMARY KEY,"
+                + "	pais text  NOT NULL"
+                + ");";//setencia sql para crear la tabla
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement()) {//conectar
+
+            stmt.execute(sql2);//ejecutar sentencia
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     /**
-     * Constructor para crear una tabla especificando el nombre de la tabla
+     * Constructor para crear tablas de la base de datos especificando el nombre
      *
-     * @param nombreTabla nombre de la tabla a crear.
+     * @param nombreTabla nombre de una tabla a crear.
+     * @param nombreTabla2 nombre de otra tabla a crear
      */
-    public Crear(String nombreTabla) {
+    public Crear(String nombreTabla, String nombreTabla2) {
 
         String url = "jdbc:sqlite:tests.db";//nombre de la base de datos
 
@@ -57,6 +71,18 @@ public class Crear {
             System.out.println(e.getMessage());
         }
 
+        String sql2 = "CREATE TABLE IF NOT EXISTS " + nombreTabla2 + " ("
+                + "	id integer PRIMARY KEY,"
+                + "	pais text  NOT NULL"
+                + ");";//setencia sql para crear la tabla
+
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement()) {//conectar
+
+            stmt.execute(sql2);//ejecutar sentencia
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

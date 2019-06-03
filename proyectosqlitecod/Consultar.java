@@ -33,8 +33,8 @@ public class Consultar {
      * Metodo para consultar datos en la tabla que se corresponden a los alumnos
      * de la clase.
      *
-     * @param datosSeparadosComas datos a consutlar en la primera tabla
-     * @param datosSeparadosComas2 datos a consultar en la segunda tabla
+     * @param datosSeparadosComas datos a consultar en la primera tabla, introducir separados por comas
+     * @param datosSeparadosComas2 datos a consultar en la segunda tabla,introducir separados por comas
      * @param nombreTabla nombre de la tabla 1
      * @param nombreTabla2 nombre de la tabla 2
      * @return el numero de filas que consulto y un 0 si hay algun error o no

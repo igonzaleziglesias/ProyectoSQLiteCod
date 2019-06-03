@@ -33,7 +33,7 @@ public class Borrar {
     }
 
     /**
-     * Metodo para borrar datos en la tabla por clave primaria, que se
+     * Metodo para borrar datos en la tabla por id (clave primaria, que se
      * corresponden a los alumnos de la clase.
      *
      * @param id clave primaria
@@ -113,7 +113,7 @@ public class Borrar {
     }
 
     /**
-     * Metodo para borrar datos en la tabla por clave primaria, que se
+     * Metodo para borrar datos en la tabla por nombre, que se
      * corresponden a los alumnos de la clase.
      *
      * @param name nombre de la persona
@@ -166,7 +166,7 @@ public class Borrar {
     }
 
     /**
-     * Metodo para borrar datos en la tabla por clave primaria, que se
+     * Metodo para borrar datos en la tabla por apellido, que se
      * corresponden a los alumnos de la clase.
      *
      * @param secondname apellido de la persona
@@ -249,7 +249,7 @@ public class Borrar {
     }
 
     /**
-     * Metodo para borrar datos en la tabla por clave primaria, que se
+     * Metodo para borrar datos en la tabla por pais de procedencia, que se
      * corresponden a los alumnos de la clase.
      *
      * @param pais pais de la persona

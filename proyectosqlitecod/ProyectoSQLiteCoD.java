@@ -8,18 +8,21 @@ public class ProyectoSQLiteCoD {
         connect();
         Crear base = new Crear("CLASE", "PROCEDENCIA");
         Insertar insert = new Insertar();
-        System.out.println("Registros insertados: "+insert.insert(6468, "Iago", "Gonzalez", "España", "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros insertados: "+insert.insert(6480, "Cesar", "Romero", "España", "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros insertados: "+insert.insert(6467, "Samuel", "Gomez", "España", "CLASE", "PROCEDENCIA"));
+        System.out.println("Registros insertados: " + insert.insert(6468, "Iago", "Gonzalez", "España", "CLASE", "PROCEDENCIA"));
+        System.out.println("Registros insertados: " + insert.insert(6480, "Cesar", "Romero", "España", "CLASE", "PROCEDENCIA"));
+        System.out.println("Registros insertados: " + insert.insert(6467, "Samuel", "Gomez", "España", "CLASE", "PROCEDENCIA"));
+        Consultar quest = new Consultar();
+        System.out.println(quest.select("id,name,secondname", "pais", "CLASE", "PROCEDENCIA"));
+
         Borrar delete = new Borrar();
-        System.out.println("Registros borrados "+delete.delete(6468, "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados " + delete.delete(6468, "CLASE", "PROCEDENCIA"));
 //        System.out.println("Registros borrados "+delete.delete(6469, "CLASE", "PROCEDENCIA"));
 //        System.out.println("Registros borrados "+delete.deleteNombre("Samuel", "CLASE", "PROCEDENCIA"));
 //        System.out.println("Registros borrados "+delete.deleteApellido("Gomez", "CLASE", "PROCEDENCIA"));
-        System.out.println("Registros borrados "+delete.deletePais("España", "CLASE", "PROCEDENCIA"));
+//        System.out.println("Registros borrados " + delete.deletePais("España", "CLASE", "PROCEDENCIA"));
 //        System.out.println("Registros borrados "+delete.delete(6467, "CLASE", "PROCEDENCIA"));
-        Consultar quest = new Consultar();
-//        System.out.println(quest.select("id,name,secondname", "pais", "CLASE", "PROCEDENCIA"));
+        Modificar update = new Modificar();
+        System.out.println("Registros modificados: "+update.update(6468, "Agumon", "Greymon", "Digimundo", "CLASE", "PROCEDENCIA"));
     }
 
 }
